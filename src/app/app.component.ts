@@ -32,8 +32,8 @@ export class AppComponent {
     }
   }
   submit() {
-    if (this.squares.filter(a => a.color === 'blue').some(a => !(a.checked))) {
-      alert("Not all blue squares are selected");
+    if (this.squares.filter(a => a.color === 'blue').some(a => !(a.checked)) || this.squares.filter(a => a.color !== 'blue').some(a => a.checked)) {
+      alert("Error");
     }
     else {
       alert("Succsess");
